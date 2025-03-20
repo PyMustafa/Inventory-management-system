@@ -1,15 +1,16 @@
 from django.db.models import Q
 from django.views.generic import ListView
-from django.contrib.auth.mixins import LoginRequiredMixin
 from .models import Product
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 
-class ProductListView(ListView):
+class ProductListView(LoginRequiredMixin, ListView):
     model = Product
     template_name = 'products/products.html'
     paginate_by = 8
     context_object_name = 'products'
     ordering = ['-created_at']
+    login_url = '/accounts/login/'
 
     def get_context_data(self, **kwargs):
         context = super(ProductListView, self).get_context_data(**kwargs)

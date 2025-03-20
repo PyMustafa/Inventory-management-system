@@ -16,7 +16,7 @@
             </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="#">
+            <a class="nav-link" href="{% url 'product-list' %}">
                 <i class="fas fa-box"></i> <span>Inventory</span>
             </a>
         </li>
@@ -51,7 +51,12 @@
             </div>
             <div class="dropdown-item">
                 <i class="fas fa-sign-out-alt"></i>
-                <span>Sign out</span>
+                <form action="{% url 'logout' %}" method="POST" style="display:inline;">
+                    {% csrf_token %}
+                    <button type="submit" style="background:none; border:none; color: inherit; font: inherit;">
+                        Logout
+                    </button>
+                </form>
             </div>
         </div>
     </div>

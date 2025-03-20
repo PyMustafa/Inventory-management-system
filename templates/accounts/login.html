@@ -17,23 +17,38 @@
         <div class="row justify-content-center align-items-center w-100">
             <div class="login d-flex flex-column justify-content-center align-items-center border rounded p-4 gap-3 col-12 col-md-6 col-lg-4">
                 <img src="{% static 'images/logo.svg' %}" alt="logo" style="width: 24px">
-                <h2 class="m-0">Welcome back!</h2>
+                <h2 class="m-0">
+                    {% if user.is_authenticated %}
+                        Welcome back, {{ user.username }}!
+                    {% else %}
+                        Welcome to our website!
+                    {% endif %}
+                </h2>
+                {% if form.non_field_errors %}
+                    <div class="alert alert-danger" role="alert">
+                        {% for error in form.non_field_errors %}
+                            {{ error }}
+                        {% endfor %}
+                    </div>
+                {% endif %}
                 <p class="m-0 text-secondary">Log in to continue</p>
-                <form action="#" class="w-100">
+                <form class="w-100" method="POST">
+                    {% csrf_token %}
                     <div class="mb-3">
-                        <label for="exampleInputEmail1" class="form-label">Email address</label>
-                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
-                               placeholder="Enter your email">
+                        <label for="exampleInputEmail1" class="form-label">Username</label>
+                        <input type="text" class="form-control" id="exampleInputUsername"
+                               aria-describedby="usernameHelp"
+                               placeholder="Enter your Username" name="username">
                     </div>
                     <div class="mb-3">
                         <label for="exampleInputPassword1" class="form-label">Password</label>
                         <input type="password" class="form-control" id="exampleInputPassword1"
-                               placeholder="Enter your password">
+                               placeholder="Enter your password" name="password">
                     </div>
                     <div class="mb-3 text-end">
                         <a style="color: #356c6c" href="#">Forgot password</a>
                     </div>
-                    <button type="submit" class="btn btn-primary">Continue</button>
+                    <button type="submit" class="btn btn-link btn-primary">Continue</button>
                 </form>
             </div>
         </div>
