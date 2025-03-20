@@ -301,6 +301,10 @@ body {
 }
 
 /*pagination*/
+.pagination {
+    z-index: -1;
+}
+
 .page-link {
     color: #2d6a63;
     background-color: white;
