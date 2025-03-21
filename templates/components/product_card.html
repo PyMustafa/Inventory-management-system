@@ -1,0 +1,58 @@
+<div class="col col-md-6 col-lg-4 col-xl-3 mb-4">
+    <div class="card rounded-4">
+        {% if product.image %}
+            <img src="{{ product.image.url }}"
+                 alt="" class="card-img-top rounded-top-4">
+        {% else %}
+            <img src="https://via.placeholder.com/300x200" alt="" class="card-img-top rounded-top-4">
+        {% endif %}
+        <div class="card-body">
+            <h5 class="card-title">{{ product.name }}</h5>
+            <p class="card-text description">
+                {{ product.description }}
+            </p>
+            <p class="card-text">Current quantity</p>
+            <p class="card-text">
+                <span class="current-quantity badge
+                    {% if product.current_quantity == 0 %}
+                        bg-danger-subtle text-danger
+                    {% elif product.current_quantity <= product.critical_quantity %}
+                        bg-warning-subtle text-warning
+                    {% else %}
+                        bg-success-subtle text-success
+                    {% endif %}">
+                    {{ product.current_quantity }}
+                </span>
+            </p>
+            <div class="row action">
+                <a href="{% url 'edit_product' product.slug %}" class="btn btn-outline-success btn-sm">edit</a>
+                <a href="#" class="btn btn-outline-danger btn-sm" data-bs-toggle="modal"
+                   data-bs-target="#deleteModal{{ product.id }}">delete</a>
+
+                <div class="modal fade" id="deleteModal{{ product.id }}" tabindex="-1"
+                     aria-labelledby="deleteModalLabel{{ product.id }}" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="deleteModalLabel{{ product.id }}">Confirm Delete</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                Are you sure you want to delete the product "{{ product.name }}"?
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                                <form method="post" action="{% url 'delete_product' product.slug %}" class="d-inline">
+                                    {% csrf_token %}
+                                    <button type="submit" class="btn btn-danger">Delete</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

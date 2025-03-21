@@ -1,0 +1,53 @@
+<div class="card p-0 text-center">
+    <div class="card-header">
+        <div class="row align-items-center">
+            <div class="d-none d-md-block col-3">Id</div>
+            <div class="col-6 col-md-4">Product Name</div>
+            <div class="col-4 col-md-3">Quantity</div>
+            <div class="col-2 text-end"></div>
+        </div>
+    </div>
+    <div class="card-body">
+        <div class="row">
+            <div class="col-12">
+                <!--<p class="text-center text-muted">add some products</p> -->
+                <div class="row align-items-center">
+                    <div class="d-none d-md-block col-3">11</div>
+                    <div class="col-6 col-md-4">white t-shirt</div>
+                    <div class="col-4 col-md-3">23</div>
+                    <div class="col-2 text-end">
+                        <div class="dropdown">
+                            <button class="btn border rounded-3 p-1 px-2 btn-light btn-sm no-arrow"
+                                    type="button" id="dropdownMenuButton" data-bs-toggle="dropdown"
+                                    aria-expanded="false">
+                                <i class="fa-solid fa-ellipsis fa-lg"></i>
+                            </button>
+                            <ul class="dropdown-menu rounded-3 px-2 dropdown-menu-end"
+                                aria-labelledby="dropdownMenuButton">
+                                <li><a class="dropdown-item rounded-2" href="#"> Edit</a></li>
+                                <li><a class="dropdown-item rounded-2" href="#">Delete</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+
+    .dropdown-item:hover {
+        background-color: #f5f5f5 !important;
+    }
+</style>
+
+<script>
+    // script to remove dropdown toggle arrow
+    document.addEventListener('DOMContentLoaded', function () {
+        let dropdownToggles = document.querySelectorAll('.no-arrow.dropdown-toggle');
+        dropdownToggles.forEach(toggle => {
+            toggle.classList.remove('dropdown-toggle');
+        });
+    });
+</script>

@@ -1,0 +1,55 @@
+/* Custom Toast Styling */
+.btn{
+  border: none
+  padding: 10px 20px !important;
+  border-radius: 5px
+  transition: background-color 0.3s ease ;
+}
+
+.btn-custom:hover {
+  background-color: #24524d
+  border-color: #24524d
+}
+.toast-custom {
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background-color: #ffffff;
+  border: 1px solid #e9ecef;
+}
+
+.toast-custom .toast-header {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  background-color: #f8f9fa;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.toast-custom .toast-body {
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  padding: 1rem;
+}
+
+ /* Custom Danger Theme Styles */
+    .btn-danger-custom {
+      background-color: #dc3545;
+      border-color: #dc3545;
+      color: white;
+    }
+    .btn-danger-custom:hover {
+      background-color: #c82333;
+      border-color: #bd2130;
+    }
+    .toast-danger-custom {
+      background-color: #dc3545;
+      color: white;
+      border: 1px solid #c82333;
+    }
+    .toast-danger-custom .toast-header {
+      background-color: #c82333;
+      color: white;
+      border-bottom: 1px solid #bd2130;
+    }
+    .toast-danger-custom .btn-close {
+      filter: invert(1);
+    }
