@@ -30,7 +30,6 @@ class ProductListView(ListView):
                 query_set = query_set.filter(Q(name__icontains=search_query) | Q(description__icontains=search_query))
 
             return query_set
-        except Exception as e:
             print(f"Error filtering products: {e}")
             return Product.objects.none()
 
