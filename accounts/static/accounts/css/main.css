@@ -1,0 +1,32 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+input.form-control {
+    background-color: #f2f2f2 !important;
+}
+
+button {
+    background-color: #356c6c !important;
+    color: white;
+    font-weight: bold !important;
+    width: 100%;
+}
+
+.btn-link {
+    color: white !important;
+    text-decoration: none !important;
+}
+
+/*register error styling*/
+
+.invalid-feedback {
+    font-size: 0.9rem;
+    margin-top: 0.25rem;
+    padding: 0.5rem;
+    background-color: rgba(220, 53, 69, 0.1);
+    border-radius: 0.25rem;
+    border-left: 3px solid #dc3545;
+}
