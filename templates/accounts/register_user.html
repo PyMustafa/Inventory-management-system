@@ -13,60 +13,58 @@
 
 {#main content#}
 {% block content %}
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-12 col-md-6">
-                <div class="card shadow my-5">
-                    <div class="card-body p-4">
-                        <h2 class="text-center mb-4">Register New User</h2>
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-12 col-md-6">
+            <div class="card shadow my-5">
+                <div class="card-body p-4">
+                    <h2 class="text-center mb-4">Register New User</h2>
 
-                        <form method="post">
-                            {% csrf_token %}
+                    <form method="post">
+                        {% csrf_token %}
 
-                            <div class="row mb-3">
-                                <div class="col-md-6">
-                                    <label for="f_name" class="form-label">First Name</label>
-                                    <input type="text" class="form-control" id="f_name" name="first_name"
-                                           placeholder="Enter first name">
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <label for="f_name" class="form-label">First Name</label>
+                                {{ form.first_name }}
+                                {% if form.first_name.errors %}
+                                {% for error in form.first_name.errors %}
+                                    <div class="invalid-feedback">
+                                    {{ error| striptags }}
+                                {% endfor %}
+
+                                {% endfor %}
+
                                 </div>
                                 <div class="col-md-6">
                                     <label for="l_name" class="form-label">Last Name</label>
-                                    <input type="text" class="form-control" id="l_name" name="last_name"
-                                           placeholder="Enter last name">
+                                    {{ form.last_name }}
                                 </div>
                             </div>
 
                             <div class="mb-3">
                                 <label for="username" class="form-label">Username</label>
-                                <input type="text" class="form-control" id="username" name="username"
-                                       placeholder="Choose a username">
+                                {{ form.username }}
                             </div>
 
                             <div class="mb-3">
                                 <label for="email" class="form-label">Email</label>
-                                <input type="email" class="form-control" id="email" name="email"
-                                       placeholder="Enter your email">
+                                {{ form.email }}
                             </div>
 
                             <div class="mb-3">
                                 <label for="password" class="form-label">Password</label>
-                                <input type="password" class="form-control" id="password" name="password"
-                                       placeholder="Create a password">
+                                {{ form.password }}
                             </div>
 
                             <div class="mb-3">
                                 <label for="confirm_password" class="form-label">Confirm Password</label>
-                                <input type="password" class="form-control" id="confirm_password"
-                                       name="confirm_password" placeholder="Confirm your password">
+                                {{ form.confirm_password }}
                             </div>
 
                             <div class="mb-3">
                                 <label for="role" class="form-label">Role</label>
-                                <select class="form-select" id="role" name="role">
-                                    <option value="" selected disabled>Select a role</option>
-                                    <option value="staff">Employee</option>
-                                    <option value="user">Manager</option>
-                                </select>
+                                {{ form.role }}
                             </div>
 
                             <div class="d-grid mb-3">
@@ -74,10 +72,10 @@
                             </div>
 
 
-                        </form>
-                    </div>
+                    </form>
                 </div>
             </div>
         </div>
     </div>
+</div>
 {% endblock %}
