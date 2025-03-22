@@ -11,15 +11,33 @@
           integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
           crossorigin="anonymous" referrerpolicy="no-referrer"/>
     <link href="{% static 'css/main.css' %}" rel="stylesheet">
-        {% block extra_css %}{% endblock %}
+    {% block extra_css %}{% endblock %}
 
 </head>
 <body>
 <div class="container-fluid p-0">
     <div class="d-flex">
         {% include 'components/sidebar.html' %}
-        {% block content %}
-        {% endblock %}
+        <div class="flex-grow-1">
+            {% if messages %}
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-12">
+                            {% for message in messages %}
+                                <div class="alert alert-{{ message.tags }} alert-dismissible fade show mt-3"
+                                     role="alert">
+                                    {{ message }}
+                                    <button type="button" class="btn-close" data-bs-dismiss="alert"
+                                            aria-label="Close"></button>
+                                </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            {% endif %}
+            {% block content %}
+            {% endblock %}
+        </div>
     </div>
 </div>
 
