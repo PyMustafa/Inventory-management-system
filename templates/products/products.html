@@ -2,7 +2,10 @@
 {% load static %}
 {% block title %} Products{% endblock %}
 
+{% block extra_css %}
 
+    <link href="{% static 'css/main.css' %}" rel="stylesheet"/>
+{% endblock %}
 {% block content %}
 
     <div class="container mt-5">
@@ -29,8 +32,8 @@
                         <p class="card-text">{{ product.created_at }}</p>
                         {% if request.user.is_staff %}
                             <div class="d-flex justify-content-evenly align-items-end">
-                                <a href="#" class="btn btn-primary m-auto">Edit</a>
-                                <a href="#" class="btn btn-danger m-auto">Delete</a>
+                                <a href="{% url 'edit_product' %}" class="btn btn-primary m-auto">Edit</a>
+                                <a href="{% url 'delete_product' %}" class="btn btn-danger m-auto">Delete</a>
                             </div>
                         {% endif %}
                     </div>

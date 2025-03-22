@@ -13,7 +13,7 @@ role_choices = [
 ]
 
 
-class UserCreateForm(UserCreationForm):
+class UserRegisterForm(UserCreationForm):
     # Define form fields with required attributes
     first_name = forms.CharField(required=True)
     last_name = forms.CharField(required=True)
