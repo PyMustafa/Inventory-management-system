@@ -1,19 +1,12 @@
 {% extends 'base.html' %}
 {% load static %}
 
-{#title #}
-{% block title %}
-    Register User
-{% endblock %}
+{% block title %}Register User{% endblock %}
 
-{#add css file#}
 {% block extra_css %}
     <link rel="stylesheet" href="{% static 'css/login.css' %}">
-    <link rel="stylesheet" href="{% static 'accounts/css/main.css' %}">
-
 {% endblock %}
 
-{#main content#}
 {% block content %}
     <div class="container">
         <div class="row justify-content-center">
@@ -40,8 +33,6 @@
                             </div>
                         {% endif %}
 
-
-
                         <form method="post">
                             {% csrf_token %}
 
@@ -57,6 +48,7 @@
                                         </div>
                                     {% endif %}
                                 </div>
+
                                 <div class="col-md-6">
                                     <label for="l_name" class="form-label">Last Name</label>
                                     {{ form.last_name }}
@@ -84,7 +76,7 @@
 
                             <div class="mb-3">
                                 <label for="email" class="form-label">Email</label>
-                                 {{ form.email }}
+                                {{ form.email }}
                                 {% if form.email.errors %}
                                     <div class="invalid-feedback">
                                         {% for error in form.email.errors %}
@@ -96,10 +88,15 @@
 
                             <div class="mb-3">
                                 <label for="password" class="form-label">Password</label>
-                                {{ form.password1 }}
-                                {% if form.password1.errors %}
+                                {{ form.password }}
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="confirm_password" class="form-label">Confirm Password</label>
+                                {{ form.confirm_password }}
+                                {% if form.confirm_password.errors %}
                                     <div class="invalid-feedback">
-                                        {% for error in form.password1.errors %}
+                                        {% for error in form.confirm_password.errors %}
                                             {{ error|striptags }}
                                         {% endfor %}
                                     </div>
@@ -107,19 +104,8 @@
                             </div>
 
                             <div class="mb-3">
-                                <label for="confirm_password" class="form-label">Confirm Password</label>
-                                {{ form.password2 }}
-                                {% if form.confirm_password2.errors %}
-                                    <div class="invalid-feedback">
-                                        {% for error in form.confirm_password2.errors %}
-                                            {{ error|striptags }}
-                                        {% endfor %}
-                            </div>
-                                {% endif %}
-
-                            <div class="mb-3">
                                 <label for="role" class="form-label">Role</label>
-                                 {{ form.role }}
+                                {{ form.role }}
                                 {% if form.role.errors %}
                                     <div class="invalid-feedback">
                                         {% for error in form.role.errors %}
@@ -132,8 +118,6 @@
                             <div class="d-grid mb-3">
                                 <button class="btn btn-primary" type="submit">Register</button>
                             </div>
-
-
                         </form>
                     </div>
                 </div>

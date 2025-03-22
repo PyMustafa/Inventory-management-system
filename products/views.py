@@ -35,6 +35,7 @@ class ProductListView(LoginRequiredMixin, ListView):
             print(f"Error filtering products: {e}")
             return Product.objects.none()
 
+
 # Create your views here.
 class AddProduct(View):
     def post(self, request):
