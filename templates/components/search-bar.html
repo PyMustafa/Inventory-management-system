@@ -1,0 +1,15 @@
+{% load static %}
+<form method="GET" class="d-flex justify-content-center align-items-center gap-2 my-4">
+    <div class="input-group" id="search-bar">
+        <input type="text" class="form-control rounded-start-3" name="search"
+               placeholder="Search Product..."
+        >
+        <button class="button-primary" type="button"
+                {% if target_modal %}
+                data-bs-toggle="modal"
+                    data-bs-target={{ target_modal }}
+                {% endif %} >
+            {{ btn_value|default:"Search" }}
+        </button>
+    </div>
+</form>

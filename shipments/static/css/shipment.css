@@ -1,0 +1,38 @@
+/* css for shipment page */
+
+ .box-button-list {
+         list-style-type: none;
+         padding-left: 0;
+   }
+  .box-button-list li {
+            display: inline-block;
+            margin: 5px;
+            padding: 8px 12px;
+            background-color: #f0f0f0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            cursor: pointer;
+    }
+  .box-button-list li:hover {
+            background-color: #e0e0e0;
+     }
+  .status-line {
+           display: block;
+            margin-top: 5px;
+            font-weight: bold;
+   }
+  .btn-custom {
+        background-color: #2d6a63;
+        color: white;
+        border: none;
+        padding: 8px 5px;
+        border-radius: 5px;
+        width: 100%;
+    }
+
+    .btn-custom:hover {
+        background-color: #24524d;
+    }
+    .text{
+      font-size:2.5rem;
+    }

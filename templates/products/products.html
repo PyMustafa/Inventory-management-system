@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} Products{% endblock %}
+
+
+{% block content %}
+
+    <div class="container mt-5">
+    <div class="row">
+        {% include 'components/search-bar.html' %}
+    </div>
+    <div class="row">
+        <p class="fs-1 "> Products List</p>
+        <hr>
+    </div>
+    <div class="products-container">
+        <div class="d-flex flex-wrap justify-content-center g-5">
+            {% for product in products %}
+                <div class="card card-item m-3" style="width: 18rem;">
+                    {% if product.image %}
+                        <img src="{{ product.image.url }}" class="card-img-top img-fluid"
+                             style="height: 200px; object-fit: cover;" alt="{{ product.name }}">
+                    {% endif %}
+
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">{{ product.name }}</h5>
+                        <p class="card-text text-truncate">{{ product.description }}</p>
+                        <p class="card-text {% if product.is_stock_critical %} text-warning {% elif not product.current_quantity %} text-danger {% endif %}">{{ product.current_quantity }}</p>
+                        <p class="card-text">{{ product.created_at }}</p>
+                        {% if request.user.is_staff %}
+                            <div class="d-flex justify-content-evenly align-items-end">
+                                <a href="#" class="btn btn-primary m-auto">Edit</a>
+                                <a href="#" class="btn btn-danger m-auto">Delete</a>
+                            </div>
+                        {% endif %}
+                    </div>
+
+                </div>
+
+
+            {% endfor %}
+        </div>
+    </div>
+
+    <div class="pagination-wrapper text-center mt-4">
+        {% include 'components/pagination.html' %}
+    </div>
+{% endblock %}
+
+</div>

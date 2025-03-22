@@ -1,0 +1,30 @@
+{% extends 'base.html'%}
+{% load static %}
+{% block extra_css %}
+        <link href="{% static 'css/toasts.css' %}" rel="stylesheet"/>
+        <script src="{% static 'js/toasts/add_toast.js' %}"></script>
+{% endblock %}
+
+
+ {% block content %}
+
+<div class="container mt-5">
+  <button id="addToastBtn" class="btn btn-custom" style="background-color: #2d6a63; color: #ffffff;">Add</button>
+</div>
+
+<div id="toastContainer" class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
+
+</div>
+
+
+<div id="toastTemplate" class="toast toast-custom" role="alert" aria-live="assertive" aria-atomic="true" style="display: none;">
+  <div class="toast-header">
+    <strong class="me-auto">New Notification</strong>
+    <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+  </div>
+  <div class="toast-body">
+    <p>This is a dynamically added toast message.</p>
+  </div>
+</div>
+
+{% endblock %}
