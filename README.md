@@ -1,5 +1,50 @@
 # Inventory-management-system
 
+## Description
+
+This Inventory Management System is designed and developed as part of my ITI Full-Stack Python Training Journey, to streamline warehouse operations, track inventory and products, manage shipments and orders, and provide real-time analytics. This full-stack application is built with Python (Django) for the backend and HTML, CSS, JavaScript, and Bootstrap for a responsive and intuitive user interface. The system handles everything from user authentication and role management to order processing and real-time inventory tracking.
+![image](https://github.com/user-attachments/assets/bd7099c9-3749-4a8f-bf85-cee8ef005ca1)
+
+## Features
+
+- User authentication and role management
+- Email verification at registeration and reseting password
+- Real-time inventory tracking
+- Order processing and management
+- Product and inventory management
+- Shipment tracking
+- Real-time analytics and reporting
+- Responsive and intuitive user interface
+
+## Technologies Used
+
+- **Backend:** Python, Django
+- **Frontend:** HTML, CSS, JavaScript, Bootstrap
+- **Database:** PostgreSQL
+- **Version Control:** Git, GitHub
+- **Project Management:** Trello
+
+## Demo
+
+🔗 Check out the live demo:
+https://web-production-f2a6e.up.railway.app/
+
+## Database Design
+![image](https://github.com/user-attachments/assets/1ce6475e-773a-4cc9-b7fe-27611d77dc00)
+
+📌 Check the Database Design:
+https://dbdiagram.io/d/ims_db_diagram-67d048da75d75cc844acb703
+
+## Setup Instructions
+
+### Using the .env File
+
+1. Copy the `.env.example` file to create a new `.env` file:
+
+   ```sh
+   # For Linux/MacOS
+   cp .env.example .env
+
 ## Setup Instructions
 
 ### Using the .env File
@@ -82,3 +127,18 @@ python manage.py createsuperuser
 python manage.py migrate
 python manage.py runserver
 ```
+
+
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+
+## Contributions
+
+Contributions are welcome! Please fork this repository and submit pull requests. For major changes, please open an issue first to discuss what you would like to change.
+
+## Contact
+
+For any questions or inquiries, feel free to contact me at:
+- Email: [developer.mustafa@outlook.com](developer.mustafa@outlook.com)
+- LinkedIn: [Mustafa Said Hassan](https://www.linkedin.com/in/mustafaahassan/)
