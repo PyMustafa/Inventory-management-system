@@ -29,6 +29,11 @@ This Inventory Management System is designed and developed as part of my ITI Ful
 🔗 Check out the live demo:
 https://web-production-f2a6e.up.railway.app/
 
+use these credentials:
+- **Username:** hassan
+- **password:** Uyn6ZqvkiIO2
+- **Role:** Manager
+
 ## Database Design
 ![image](https://github.com/user-attachments/assets/1ce6475e-773a-4cc9-b7fe-27611d77dc00)
 
