@@ -34,6 +34,9 @@ use these credentials:
 - **password:** Uyn6ZqvkiIO2
 - **Role:** Manager
 
+Note: In the live demo, we have removed the ability for the manager to add or edit products, similar to the employee role. This was done to prevent any inappropriate photos from being added as products.
+
+
 ## Database Design
 ![image](https://github.com/user-attachments/assets/1ce6475e-773a-4cc9-b7fe-27611d77dc00)
 
